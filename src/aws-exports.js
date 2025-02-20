@@ -18,8 +18,8 @@ const awsmobile = {
       "profile",
       "aws.cognito.signin.user.admin",
     ],
-    redirectSignIn: "https://task-manager-wheat-psi.vercel.app/",
-    redirectSignOut: "https://task-manager-wheat-psi.vercel.app/",
+    redirectSignIn: "https://task-manager-wheat-psi.vercel.app",
+    redirectSignOut: "https://task-manager-wheat-psi.vercel.app",
     responseType: "code",
   },
 
