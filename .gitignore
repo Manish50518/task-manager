@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Node modules and build outputs
 node_modules
 dist
 dist-ssr
@@ -23,8 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 
-#amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
+# amplify-do-not-edit-begin
+amplify/#current-cloud-backend
 amplify/.config/local-*
 amplify/logs
 amplify/mock-data
@@ -43,4 +44,4 @@ amplify-gradle-config.json
 amplifytools.xcconfig
 .secret-*
 **.sample
-#amplify-do-not-edit-end
+# amplify-do-not-edit-end
