@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Amplify } from "aws-amplify";
 import { getCurrentUser, fetchUserAttributes, signOut } from "aws-amplify/auth";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import awsExports from "../aws-exports";
+// import awsExports from "../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
 import "./App.css";
 
-Amplify.configure(awsExports);
+// Amplify.configure(awsExports);
 
 function App({ signOut: amplifySignOut }) {
   const [userData, setUserData] = useState({});
