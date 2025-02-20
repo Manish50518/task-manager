@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-taskauthentication-dev-0721b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::960351580303:role/amplify-taskauthentication-dev-0721b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::960351580303:role/amplify-taskauthentication-dev-0721b-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-taskauthentication-dev-0721b-deployment",
+      "UnauthRoleName": "amplify-taskauthentication-dev-0721b-unauthRole",
+      "StackName": "amplify-taskauthentication-dev-0721b",
+      "StackId": "arn:aws:cloudformation:us-east-2:960351580303:stack/amplify-taskauthentication-dev-0721b/92a813c0-ef9c-11ef-b479-0212bef70dc1",
+      "AmplifyAppId": "d1dws9ldrl76di"
+    },
+    "categories": {
+      "auth": {
+        "taskauthenticationb62ad0a8": {}
+      }
+    }
+  }
+}
