@@ -45,10 +45,3 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 # amplify-do-not-edit-end
-VITE_AWS_PROJECT_REGION=us-east-2
-VITE_AWS_COGNITO_REGION=us-east-2
-VITE_AWS_USER_POOLS_ID=us-east-2_ly1v1gjyC
-VITE_AWS_CLIENT_ID=6pc4slhlndcvbvp4il13rmdofj
-VITE_REDIRECT_SIGNIN=http://localhost:5173/
-VITE_REDIRECT_SIGNOUT=http://localhost:5173/
-VITE_OAUTH_DOMAIN=taskauthenticationb62ad0a8-b62ad0a8-dev.auth.us-east-2.amazoncognito.com
