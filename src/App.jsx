@@ -1,12 +1,8 @@
 import { useEffect, useState } from "react";
-import { Amplify } from "aws-amplify";
 import { getCurrentUser, fetchUserAttributes, signOut } from "aws-amplify/auth";
 import { withAuthenticator } from "@aws-amplify/ui-react";
-import awsExports from "./aws-exports";
 import "@aws-amplify/ui-react/styles.css";
 import "./App.css";
-
-Amplify.configure(awsExports);
 
 function App({ signOut: amplifySignOut }) {
   const [userData, setUserData] = useState({});
@@ -15,7 +11,7 @@ function App({ signOut: amplifySignOut }) {
     const fetchUser = async () => {
       try {
         const user = await getCurrentUser();
-        const attributes = await fetchUserAttributes(); // Fetch user attributes
+        const attributes = await fetchUserAttributes();
 
         setUserData({
           firstName: attributes.given_name || "N/A",
@@ -33,7 +29,7 @@ function App({ signOut: amplifySignOut }) {
   const handleSignOut = async () => {
     try {
       await signOut();
-      amplifySignOut(); // Ensure proper sign-out
+      amplifySignOut();
     } catch (error) {
       console.error("Error signing out:", error);
     }
