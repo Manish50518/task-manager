@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import Sidebar from "../siderbar/Sidebar";
+import Sidebar from "../sidebar/SideBar";
 import Header from "../header/Header";
 
 function Layout() {
