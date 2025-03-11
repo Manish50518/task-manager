@@ -71,7 +71,7 @@ function Header({ signOut: amplifySignOut, setOpenSidebar }) {
       <div className="flex gap-4">
         <p>Hi {userData.firstName} Wellcome again </p>
         <button className="bg-gray-200 p-2 rounded-md" onClick={handleSignOut}>
-          Sign Out maka
+          Sign Out
         </button>
       </div>
     </header>
