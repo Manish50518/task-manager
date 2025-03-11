@@ -18,7 +18,7 @@ const awsmobile = {
       "profile",
       "aws.cognito.signin.user.admin",
     ],
-    redirectSignIn: "https://task-manager-six-lovat.vercel.app/notes",
+    redirectSignIn: "https://task-manager-six-lovat.vercel.app",
     redirectSignOut: "https://task-manager-six-lovat.vercel.app",
     responseType: "code",
   },
