@@ -15,7 +15,7 @@
     ],
     // https:taskauthenticationb62ad0a8-b62ad0a8-dev.auth.us-east-2.amazoncognito.com/oauth2/idpresponse
     "redirectSignIn": "https://task-manager-six-lovat.vercel.app/notes",
-    "redirectSignOut": "https://task-manager-six-lovat.vercel.app",
+    "redirectSignOut": "https://task-manager-six-lovat.vercel.app/login",
     "responseType": "code"
   },
   "federationTarget": "COGNITO_USER_POOLS",

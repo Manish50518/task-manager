@@ -61,7 +61,7 @@ function Header({ signOut: amplifySignOut, setOpenSidebar }) {
         {/* Sidebar toggle button */}
         <button
           onClick={() => setOpenSidebar((prev) => !prev)}
-          className="p-2 rounded-md hover:bg-gray-200 transition-all md:hidden"
+          className="p-2 rounded-md hover:bg-gray-200 transition-all "
         >
           <HiBars3 className="text-2xl cursor-pointer" />
         </button>
