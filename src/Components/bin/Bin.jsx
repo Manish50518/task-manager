@@ -54,14 +54,17 @@ function Bin() {
         <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {bin.map((note) => (
             <div
-              className="w-full max-w-[220px] mx-auto rounded-md border overflow-hidden p-4"
+              className="w-full max-w-[220px] mx-auto rounded-md border overflow-hidden p-4 flex flex-col h-full"
               key={note.id}
             >
               <p className="font-semibold mb-5 break-words whitespace-normal">
                 {note.title}
               </p>
-              <p className="break-words whitespace-normal">{note.note}</p>
-              <div className="flex justify-end gap-2 mt-4">
+              <div className="flex-1">
+                <p className="whitespace-pre-line break-words">{note.note}</p>
+              </div>
+
+              <div className="flex justify-end gap-2 mt-4 pt-1 border-t">
                 <button onClick={() => handleRestore(note.id)}>
                   <FaTrashRestore className="text-sm" />
                 </button>

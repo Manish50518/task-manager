@@ -1,37 +1,37 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { getCurrentUser, fetchUserAttributes, signOut } from "aws-amplify/auth";
-// import { withAuthenticator } from "@aws-amplify/ui-react";
-// import awsExports from "../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
 import { useLocation } from "react-router-dom";
 import { HiBars3 } from "react-icons/hi2";
 
-// Amplify.configure(awsExports);
-
-// eslint-disable-next-line react-refresh/only-export-components
 function Header({ signOut: amplifySignOut, setOpenSidebar }) {
   const [userData, setUserData] = useState({});
   const location = useLocation();
   const routeName = location.pathname;
 
   let headerText = "";
-
   if (routeName === "/notes" || routeName === "/") {
-    headerText = "Keep";
-  } else if (routeName === "/archive") {
-    headerText = "Archive";
+    headerText = "Dashboard";
+  } else if (routeName === "/addtask") {
+    headerText = "Add Tasks";
+  } else if (routeName === "/completed") {
+    headerText = "Completed";
+  } else if (routeName === "/inprogress") {
+    headerText = "In Progress";
+  } else if (routeName === "/pending") {
+    headerText = "Pending";
   } else if (routeName === "/bin") {
     headerText = "Bin";
   } else {
     headerText = routeName;
   }
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const user = await getCurrentUser();
-        const attributes = await fetchUserAttributes(); // Fetch user attributes
-
+        const attributes = await fetchUserAttributes();
         setUserData({
           firstName: attributes.given_name || "N/A",
           lastName: attributes.family_name || "N/A",
@@ -48,29 +48,44 @@ function Header({ signOut: amplifySignOut, setOpenSidebar }) {
   const handleSignOut = async () => {
     try {
       await signOut();
-      amplifySignOut(); // Ensure proper sign-out
+      amplifySignOut();
     } catch (error) {
       console.error("Error signing out:", error);
     }
   };
 
   return (
-    <header className="w-full flex items-center gap-3 p-3 shadow-sm bg-white fixed top-0 left-0 justify-between">
-      <div className="flex gap-3">
-        <button onClick={() => setOpenSidebar((prev) => !prev)}>
-          <HiBars3 className="text-2xl cursor-pointer hover:opacity-80 transition-all" />
+    <header className="w-full flex items-center gap-3 px-4 py-3 shadow-sm bg-white fixed top-0 left-0 justify-between z-10">
+      {/* Left section */}
+      <div className="flex items-center gap-3">
+        {/* Sidebar toggle button */}
+        <button
+          onClick={() => setOpenSidebar((prev) => !prev)}
+          className="p-2 rounded-md hover:bg-gray-200 transition-all md:hidden"
+        >
+          <HiBars3 className="text-2xl cursor-pointer" />
         </button>
+
+        {/* Logo */}
         <img
           src="keep image.png"
           alt="Keep logo"
           className="h-9 object-contain"
         />
 
-        <p className="text-3xl">{headerText}</p>
+        {/* Page Title */}
+        <p className="text-xl md:text-2xl font-medium">{headerText}</p>
       </div>
-      <div className="flex gap-4">
-        <p>Hi {userData.firstName} Wellcome again </p>
-        <button className="bg-gray-200 p-2 rounded-md" onClick={handleSignOut}>
+
+      {/* Right section */}
+      <div className="flex items-center gap-4">
+        <p className="text-sm md:text-base hidden sm:block">
+          Hi <strong>{userData.lastName}</strong>, welcome again
+        </p>
+        <button
+          className="bg-gray-200 p-2 rounded-md text-sm md:text-base"
+          onClick={handleSignOut}
+        >
           Sign Out
         </button>
       </div>
@@ -78,5 +93,4 @@ function Header({ signOut: amplifySignOut, setOpenSidebar }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default Header;
