@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./index.css";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Note from "./Components/ui/Note";
@@ -13,8 +14,10 @@ import CompletedTask from "./Components/completed/CompletedTask";
 import InProgress from "./Components/inProgress/InProgress";
 import Pending from "./Components/pending/Pending";
 
+// eslint-disable-next-line react-refresh/only-export-components
 function ProtectedRoute({ children }) {
   const { authStatus } = useAuthenticator((context) => [context.authStatus]);
+  console.log(authStatus);
 
   if (authStatus !== "authenticated") {
     return <Navigate to="/login" replace />;
@@ -29,7 +32,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Redirect authenticated users to /notes */}
         <Route
           path="/login"
           element={
